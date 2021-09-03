@@ -6,12 +6,14 @@
       {
         "id": "e07ce739216b25b7",
         "type": "leaf",
+        "pinned": true,
         "state": {
           "type": "markdown",
           "state": {
             "file": "Data Structure.md",
             "mode": "preview"
-          }
+          },
+          "pinned": true
         }
       }
     ],

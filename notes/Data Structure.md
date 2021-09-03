@@ -10,6 +10,17 @@ Definition from wikipidedia:
 ## Examples
 
 ### Array
+> In [computer science](https://en.wikipedia.org/wiki/Computer_science "Computer science"), an **array data structure**, or simply an **array**, is a [data structure](https://en.wikipedia.org/wiki/Data_structure "Data structure") consisting of a collection of _elements_ ([values](https://en.wikipedia.org/wiki/Value_(computer_science) "Value (computer science)") or [variables](https://en.wikipedia.org/wiki/Variable_(programming) "Variable (programming)")), each identified by at least one _array index_ or _key_. An array is stored such that the position of each element can be computed from its index [tuple](https://en.wikipedia.org/wiki/Tuple "Tuple") by a mathematical formula.[ [1] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-1)[ [2] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-andres-2)[ [3] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-garcia-3)
+
+```C
+int *arr = [1, 5, 9, 199];
+int index = 3;
+
+// the value associated with the "key" index is given by
+int value = *(arr + index) 
+```
+
+
 
 ### Linked List
 
