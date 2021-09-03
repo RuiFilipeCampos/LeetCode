@@ -1,41 +1,66 @@
 
-#include <vector>
 #include <iostream>
-#include <unordered_map>
 using namespace std;
+
+
+
+// Definition for singly-linked list.
+struct ListNode {
+     int val;
+     ListNode *next;
+     ListNode() : val(0), next(nullptr) {}
+     ListNode(int x) : val(x), next(nullptr) {}
+     ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+ 
 
 
 
 class Solution {
     public:
-        vector<int> twoSum(vector<int>& nums, int target) {
-
-
-            unordered_map<int, int> hash_table; 
-            
-            int index;
-            int i = 0;
-            
-            // one solution is guaranteed -> loop will be brocken by return
-            while (1){
+        ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
                 
-                // need the index of a value `targets - nums[i]`
-                index = hash_table[target - nums[i]];
-                
-                if (index == 0){  // no such index
-                    hash_table[nums[i]] = i + 1; // store the value (nums is being recreated)
-                }else{ // index has been found
-                    return {i, index - 1};
-                };         
-                
-                ++i;
-            };
+                // copying the start of the list, will be returning this
+                ListNode *res = l1;
             
+                int carry = 0;
+                int sum;
 
-           return {0, 0};
-        };       
+                do{
+                    sum = l1->val + l2->val + carry;
+                    l1->val = sum % 10;
+                    carry = (sum - l1->val)/10;
+
+                    l1 = l1->next;
+                    l2 = l2->next;
+
+                    if (l1 == NULL){     // REACHED END OF `l1`
+                        if (l2 != NULL){ // REACHED END OF `l2`
+                            while (carry != 0){
+                                l1->next = new ListNode;
+                                l1 = l1->next;
+                                l1->val = carry % 10;
+                                carry -= l1->val;
+                            }; return res;
+                        };
+                        
+                    // swap
+                    swap(l1, l2);
+                    //continue;
+                    
+                    };
+
+            
+            
+                    if (l2 == NULL){
+                        
+                        return res;
+                    };
+            
+                }while(1);
+        
+        };
 };
-
 
 /** Comments:
  * 
