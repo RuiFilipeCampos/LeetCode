@@ -9,7 +9,32 @@ Definition from wikipidedia:
 
 ## Examples
 
+### Array
+
+### Linked List
+
+```cpp
+template <typename T>
+struct Node{
+	T val;
+	Node<T> *next;
+};
+```
+
 ### Hash Map
 
+Consider a map $h$ of the form:
 
-### Array
+$$
+h: K -> H 
+$$
+
+where $K$ is a set of "key" values and $H$ is a set of 
+
+There is a chain of maps that take a key to an integer value:
+
+key -> hash -> integer
+
+
+
+
