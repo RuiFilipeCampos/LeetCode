@@ -22,7 +22,7 @@ Definition from wikipidedia:
 > 
 > An array is stored such that the position of each element can be computed from its index [tuple](https://en.wikipedia.org/wiki/Tuple "Tuple") by a mathematical formula.[ [1] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-1)[ [2] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-andres-2)[ [3] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-garcia-3)
 
-That definition is pretty abstract. A practical example is:
+A practical example is the simple 1D array, accessed from a 1D tuple, (index,):
 
 ```C
 int *arr = [1, 5, 9, 199];
@@ -33,6 +33,13 @@ int value = *(arr + index)
 ```
 
 `arr` is C-contiguous, meaning that all its elements are stored in adjacent memory locations. Simple pointer arithmetics is applied to an initial pointer to find the other elements via their index value.
+
+Accessing an array consisties in:
+
+- calculating a memory address
+- dereferencing that address
+
+Both are costless operations in most scenarios, and both are independent of the number of items on the array, that is, accessing an array has a time complexity of $O(1)$.
 
 ### Linked List
 
