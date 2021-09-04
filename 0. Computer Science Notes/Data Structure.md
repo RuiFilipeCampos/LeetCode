@@ -4,9 +4,9 @@ nav: [[Data Structure]]
 Definition from wikipidedia:
 
 > In [computer science](https://en.wikipedia.org/wiki/Computer_science "Computer science"), a **data structure** is a data 
-> - organization,   
+> - organization,   `how it is organized in memory`
 > - management,   
-> - and storage      `how it is organized in memory`
+> - and storage      
 > 
 > format that enables efficient *access* and *modification*.
 
@@ -18,7 +18,11 @@ Definition from wikipidedia:
 ## Examples
 
 ### Array
-> In [computer science](https://en.wikipedia.org/wiki/Computer_science "Computer science"), an **array data structure**, or simply an **array**, is a [data structure](https://en.wikipedia.org/wiki/Data_structure "Data structure") consisting of a collection of _elements_ ([values](https://en.wikipedia.org/wiki/Value_(computer_science) "Value (computer science)") or [variables](https://en.wikipedia.org/wiki/Variable_(programming) "Variable (programming)")), each identified by at least one _array index_ or _key_. An array is stored such that the position of each element can be computed from its index [tuple](https://en.wikipedia.org/wiki/Tuple "Tuple") by a mathematical formula.[ [1] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-1)[ [2] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-andres-2)[ [3] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-garcia-3)
+> In [computer science](https://en.wikipedia.org/wiki/Computer_science "Computer science"), an **array data structure**, or simply an **array**, is a [data structure](https://en.wikipedia.org/wiki/Data_structure "Data structure") consisting of a collection of _elements_ ([values](https://en.wikipedia.org/wiki/Value_(computer_science) "Value (computer science)") or [variables](https://en.wikipedia.org/wiki/Variable_(programming) "Variable (programming)")), each identified by at least one _array index_ or _key_. 
+> 
+> An array is stored such that the position of each element can be computed from its index [tuple](https://en.wikipedia.org/wiki/Tuple "Tuple") by a mathematical formula.[ [1] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-1)[ [2] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-andres-2)[ [3] ](https://en.wikipedia.org/wiki/Array_data_structure#cite_note-garcia-3)
+
+That definition is pretty abstract. A practical example is:
 
 ```C
 int *arr = [1, 5, 9, 199];
@@ -28,9 +32,11 @@ int index = 3;
 int value = *(arr + index) 
 ```
 
-
+`arr` is C-contiguous, meaning that all its elements are stored in adjacent memory locations. Simple pointer arithmetics is applied to an initial pointer to find the other elements via their index value.
 
 ### Linked List
+
+Concept is quite simple:
 
 ```cpp
 template <typename T>
@@ -39,6 +45,9 @@ struct Node{
 	Node<T> *next;
 };
 ```
+
+node1 -> node2 -> node3
+
 
 ### Hash Map
 
